@@ -31,7 +31,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: ffmpeg-bin-debian10
-          path: build/bin/
+          path: build/
 
       - uses: actions/upload-artifact@v3
         if: failure()
@@ -75,7 +75,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: ffmpeg-bin-debian11-${{ matrix.build_type }}
-          path: build/bin/
+          path: build/
           
       - uses: actions/upload-artifact@v3
         if: failure()
@@ -122,7 +122,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: ffmpeg-bin-ubuntu2204-${{ matrix.build_type }}
-          path: build/bin/
+          path: build/
           
       - uses: actions/upload-artifact@v3
         if: failure()

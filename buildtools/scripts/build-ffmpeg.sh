@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-FFMPEG_STATIC_SHARED_PARAMS="--enable-static --disable-shared"
+FFMPEG_STATIC_SHARED_PARAMS="--enable-static --enable-shared"
 
 # echo "OSTYPE: $OSTYPE"
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -9,7 +9,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     }
 elif [[ "$OSTYPE" == msys* ]]; then
     # build shared on windows
-    FFMPEG_STATIC_SHARED_PARAMS="--disable-static --enable-shared"
+    # FFMPEG_STATIC_SHARED_PARAMS="--disable-static --enable-shared"
     MSYS_BUILD_EXTRA_LDFLAGS=(-fstack-protector)  # to avoid error when link opus
 elif [[ "$OSTYPE" == "linux"* ]]; then
     :
